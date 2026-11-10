@@ -1,9 +1,19 @@
-import type { TalentCountry } from '@/data/country-matrix';
+import { employerContributionLinesLocal, type TalentCountry } from '@/data/country-matrix';
 import { EOR_MONTHLY_FEE_USD } from '@/data/partners';
+
+export interface ContributionLineUSD {
+  readonly label: string;
+  readonly amountUSD: number;
+}
 
 export interface CostBreakdown {
   readonly baseSalaryUSD: number;
+  /** Sum of all statutory employer contributions (after ceilings and thresholds). */
   readonly employerTaxUSD: number;
+  /** Employer contributions as a fraction of base salary at this salary level. */
+  readonly effectiveEmployerTaxRate: number;
+  /** Per-component breakdown of employer contributions. */
+  readonly contributionLines: readonly ContributionLineUSD[];
   readonly mandatoryBenefitsUSD: number;
   /** Salary + employer taxes + mandatory benefits. */
   readonly trueCostUSD: number;
@@ -34,12 +44,20 @@ export function clampSalary(value: number): number {
 }
 
 export function calculateHireCost(
-  talent: Pick<TalentCountry, 'employerTaxRate' | 'mandatoryBenefitsRate'>,
+  talent: Pick<
+    TalentCountry,
+    'usdToLocalRate' | 'employerContributions' | 'mandatoryBenefitsRate' | 'benefitsSubjectToContributions'
+  >,
   baseSalaryUSD: number,
   includeEorFee = false,
 ): CostBreakdown {
   const base = clampSalary(baseSalaryUSD);
-  const employerTaxUSD = base * talent.employerTaxRate;
+  // Contributions are computed in local currency because statutory ceilings are set in local currency.
+  const contributionLines = employerContributionLinesLocal(talent, base * talent.usdToLocalRate).map((line) => ({
+    label: line.label,
+    amountUSD: line.amountLocal / talent.usdToLocalRate,
+  }));
+  const employerTaxUSD = contributionLines.reduce((total, line) => total + line.amountUSD, 0);
   const mandatoryBenefitsUSD = base * talent.mandatoryBenefitsRate;
   const trueCostUSD = base + employerTaxUSD + mandatoryBenefitsUSD;
   const eorFeeUSD = includeEorFee ? EOR_MONTHLY_FEE_USD * 12 : 0;
@@ -48,6 +66,8 @@ export function calculateHireCost(
   return {
     baseSalaryUSD: base,
     employerTaxUSD,
+    effectiveEmployerTaxRate: employerTaxUSD / base,
+    contributionLines,
     mandatoryBenefitsUSD,
     trueCostUSD,
     eorFeeUSD,

@@ -83,7 +83,7 @@ function buildFaq(company: CompanyCountry, talent: TalentCountry, cost: CostBrea
   return [
     {
       question: `How much does it cost to hire a developer from ${talent.countryName} in ${company.nameInSentence}?`,
-      answer: `At the ${DATA_YEAR} market average of ${inHq(cost.baseSalaryUSD)} (${inLocal(cost.baseSalaryUSD)}) per year, the true employment cost is about ${inHq(cost.trueCostUSD)} once ${formatPercent(talent.employerTaxRate)} employer payroll taxes and ${formatPercent(talent.mandatoryBenefitsRate)} mandatory benefits are added. Through an Employer of Record at roughly ${formatCurrency(EOR_MONTHLY_FEE_USD, 'USD')} per month, budget about ${inHq(cost.trueCostUSD + eorYear)} per year.`,
+      answer: `At a typical ${DATA_YEAR} mid-level salary of ${inHq(cost.baseSalaryUSD)} (${inLocal(cost.baseSalaryUSD)}) per year, the true employment cost is about ${inHq(cost.trueCostUSD)} once ${formatPercent(talent.employerTaxRate)} employer payroll taxes and ${formatPercent(talent.mandatoryBenefitsRate)} mandatory benefits are added. Through an Employer of Record at roughly ${formatCurrency(EOR_MONTHLY_FEE_USD, 'USD')} per month, budget about ${inHq(cost.trueCostUSD + eorYear)} per year.`,
     },
     {
       question: `What employer taxes do you pay when hiring in ${talent.countryName}?`,
@@ -91,7 +91,7 @@ function buildFaq(company: CompanyCountry, talent: TalentCountry, cost: CostBrea
     },
     {
       question: `Is it risky to hire a contractor in ${talent.countryName}?`,
-      answer: `${talent.countryName} is rated ${talent.complianceRiskScore.toLowerCase()} compliance risk. ${talent.complianceRiskSummary} At the average salary, back-dated employer contributions and benefits could reach about ${inHq(cost.misclassificationExposureUSD)} per year of engagement if a contractor is reclassified.`,
+      answer: `${talent.countryName} is rated ${talent.complianceRiskScore.toLowerCase()} compliance risk. ${talent.complianceRiskSummary} At a typical salary, back-dated employer contributions and benefits could reach about ${inHq(cost.misclassificationExposureUSD)} per year of engagement if a contractor is reclassified.`,
     },
     {
       question: `Can a company in ${company.nameInSentence} hire in ${talent.countryName} without a local entity?`,
@@ -217,8 +217,10 @@ export default async function HirePage({ params }: HirePageProps) {
             Cost to Hire a Developer from {talent.countryName} in {company.nameInSentence}
           </h1>
           <p className="mt-3 max-w-3xl text-pretty text-base text-slate-600 sm:text-lg">
-            A mid-level software developer in {talent.countryName} earns around{' '}
-            <strong className="text-ink">{inHq(cost.baseSalaryUSD)}</strong> a year. After employer payroll
+            A mid-level software developer in {talent.countryName} typically earns{' '}
+            {formatCurrency(talent.salaryRangeUSD[0], 'USD')}–{formatCurrency(talent.salaryRangeUSD[1], 'USD')} a year.
+            At the mid-point of{' '}
+            <strong className="text-ink">{inHq(cost.baseSalaryUSD)}</strong>, after employer payroll
             taxes and mandatory benefits, the true cost to a company in {company.nameInSentence} is about{' '}
             <strong className="text-ink">{inHq(cost.trueCostUSD)}</strong> — {formatPercent(cost.overheadUSD / cost.baseSalaryUSD)}{' '}
             above base salary.
@@ -226,7 +228,10 @@ export default async function HirePage({ params }: HirePageProps) {
 
           <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {[
-              { label: 'Avg. dev salary', value: formatCurrency(talent.avgDevSalaryUSD, 'USD') },
+              {
+                label: 'Mid-level salary',
+                value: `${formatCurrency(talent.salaryRangeUSD[0], 'USD', true)}–${formatCurrency(talent.salaryRangeUSD[1], 'USD', true)}`,
+              },
               { label: 'Employer taxes', value: formatPercent(talent.employerTaxRate) },
               { label: 'Mandatory benefits', value: formatPercent(talent.mandatoryBenefitsRate) },
               { label: 'Local currency', value: talent.currencyCode },

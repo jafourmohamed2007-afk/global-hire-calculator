@@ -30,6 +30,10 @@ npm run dev
 | `app/hire/page.tsx` | No-JavaScript fallback that redirects `?from=&to=` to the canonical slug |
 | `components/CostCalculator.tsx` | Interactive client-side calculator (slider, presets, currency toggle) |
 
+## Data & verification
+
+Every figure is sourced in `SOURCES.md`, and `npm test` checks the calculations against hand-worked examples.
+
 ## Data disclaimer
 
 Salaries, employer contribution rates and exchange rates are indicative planning figures. Review and update `data/country-matrix.ts` regularly; it is not tax or legal advice.

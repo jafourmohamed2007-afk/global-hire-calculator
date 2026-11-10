@@ -73,8 +73,7 @@ export function PartnerCards({ talentCountryName, heading }: PartnerCardsProps) 
                   <span className="sr-only">(opens in a new tab)</span>
                 </a>
                 <p className="mt-2 text-center text-xs text-slate-500">
-                  EOR from ~{formatCurrency(partner.fromPriceMonthlyUSD, 'USD')}/employee/month · list price, confirm
-                  on site
+                  EOR from {formatCurrency(partner.fromPriceMonthlyUSD, 'USD')}/employee/month · {partner.priceNote}
                 </p>
               </div>
             </article>

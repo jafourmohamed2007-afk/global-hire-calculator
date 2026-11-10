@@ -1,7 +1,7 @@
 'use client';
 
 import { useId, useMemo, useState, type CSSProperties, type ReactNode } from 'react';
-import type { CompanyCountry, TalentCountry } from '@/data/country-matrix';
+import { FX_RATES_AS_OF, type CompanyCountry, type TalentCountry } from '@/data/country-matrix';
 import { EOR_MONTHLY_FEE_USD } from '@/data/partners';
 import {
   MAX_SALARY_USD,
@@ -161,8 +161,9 @@ export function CostCalculator({ company, talent, partnerSlot }: CostCalculatorP
               />
             </div>
             <p id={`${ids}-salary-help`} className="mt-1.5 text-xs text-slate-500">
-              {formatCurrency(MIN_SALARY_USD, 'USD')} – {formatCurrency(MAX_SALARY_USD, 'USD')}. Average mid-level
-              developer in {talent.countryName}: {formatCurrency(talent.avgDevSalaryUSD, 'USD')}.
+              Typical mid-level developer in {talent.countryName}: {formatCurrency(talent.salaryRangeUSD[0], 'USD')}–
+              {formatCurrency(talent.salaryRangeUSD[1], 'USD')} (mid-point {formatCurrency(talent.avgDevSalaryUSD, 'USD')}).
+              Accepts {formatCurrency(MIN_SALARY_USD, 'USD')}–{formatCurrency(MAX_SALARY_USD, 'USD')}.
             </p>
 
             <div className="mt-4">
@@ -247,7 +248,7 @@ export function CostCalculator({ company, talent, partnerSlot }: CostCalculatorP
             <span className="min-w-0">
               <span className="block text-sm font-semibold text-ink">Include EOR platform fee</span>
               <span className="block text-xs text-slate-500">
-                Typical list price ~{formatCurrency(EOR_MONTHLY_FEE_USD, 'USD')}/month
+                Deel &amp; Remote list price {formatCurrency(EOR_MONTHLY_FEE_USD, 'USD')}/month
               </span>
             </span>
             <input
@@ -315,7 +316,7 @@ export function CostCalculator({ company, talent, partnerSlot }: CostCalculatorP
                 },
                 {
                   label: 'Employer payroll taxes',
-                  hint: `${formatPercent(talent.employerTaxRate)} statutory contributions`,
+                  hint: `${formatPercent(breakdown.effectiveEmployerTaxRate)} effective, after statutory caps`,
                   usd: breakdown.employerTaxUSD,
                   color: 'bg-amber-500',
                 },
@@ -357,6 +358,34 @@ export function CostCalculator({ company, talent, partnerSlot }: CostCalculatorP
                 </dd>
               </div>
             </dl>
+
+            <details className="group mt-3 rounded-xl border border-slate-200">
+              <summary className="flex min-h-12 cursor-pointer items-center justify-between gap-3 px-3 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600">
+                How employer taxes are calculated
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 20 20"
+                  className="size-5 shrink-0 fill-slate-500 transition-transform group-open:rotate-180"
+                >
+                  <path d="M5.3 7.3a1 1 0 0 1 1.4 0L10 10.6l3.3-3.3a1 1 0 1 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 0-1.4Z" />
+                </svg>
+              </summary>
+              <dl className="divide-y divide-slate-100 border-t border-slate-200">
+                {breakdown.contributionLines.map((line) => (
+                  <div key={line.label} className="flex items-start justify-between gap-3 px-3 py-2">
+                    <dt className="min-w-0 text-xs text-slate-600">{line.label}</dt>
+                    <dd className="shrink-0 text-right text-xs font-semibold tabular-nums text-ink">
+                      {money(line.amountUSD)}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+              {talent.benefitsSubjectToContributions && (
+                <p className="border-t border-slate-200 px-3 py-2 text-xs text-slate-500">
+                  Contributions in {talent.countryName} are also charged on the mandatory benefits.
+                </p>
+              )}
+            </details>
           </div>
 
           {partnerSlot}
@@ -382,7 +411,7 @@ export function CostCalculator({ company, talent, partnerSlot }: CostCalculatorP
               ))}
             </ul>
             <p className="mt-2 text-xs text-slate-500">
-              Indicative rates: 1 USD = {formatNumber(talent.usdToLocalRate)} {talent.currencyCode}
+              Mid-market rates on {FX_RATES_AS_OF}: 1 USD = {formatNumber(talent.usdToLocalRate)} {talent.currencyCode}
               {company.currencyCode !== 'USD' && ` = ${formatNumber(company.usdToLocalRate)} ${company.currencyCode}`}.
               Payroll is usually funded at the provider’s live rate.
             </p>

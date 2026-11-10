@@ -222,7 +222,7 @@ export function CostCalculator({ company, talent, partnerSlot }: CostCalculatorP
 
           <fieldset className="mt-5">
             <legend className="text-sm font-semibold text-ink">Show results in</legend>
-            <div className="mt-2 grid grid-cols-3 gap-2">
+            <div className="mt-2 grid auto-cols-fr grid-flow-col gap-2">
               {currencies.map((currency) => (
                 <label
                   key={currency.code}

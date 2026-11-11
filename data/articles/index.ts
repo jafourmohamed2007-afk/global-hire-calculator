@@ -1,4 +1,5 @@
 import { brazilCltCost } from './brazil-clt-cost';
+import { colombiaEmployerCosts } from './colombia-employer-costs';
 import { eorVsContractor } from './eor-vs-contractor';
 import { indiaLabourCodes } from './india-labour-codes';
 import { mexicoPayrollCosts } from './mexico-payroll-costs';
@@ -6,6 +7,8 @@ import { misclassificationRisk } from './misclassification-risk';
 import { philippinesContributions } from './philippines-contributions';
 import { polandB2bVsEmployment } from './poland-b2b-vs-employment';
 import { trueCostOfHiringAbroad } from './true-cost-of-hiring-abroad';
+import { ukraineHiringGuide } from './ukraine-hiring-guide';
+import { vietnamSocialInsurance } from './vietnam-social-insurance';
 import type { Article } from './types';
 
 export type { Article, ArticleBlock } from './types';
@@ -20,6 +23,9 @@ export const ARTICLES: readonly Article[] = [
   mexicoPayrollCosts,
   philippinesContributions,
   polandB2bVsEmployment,
+  colombiaEmployerCosts,
+  vietnamSocialInsurance,
+  ukraineHiringGuide,
 ];
 
 const articleBySlug = new Map(ARTICLES.map((article) => [article.slug, article]));

@@ -130,7 +130,7 @@ describe('reviews API', () => {
     const response = await post({ ...GOOD, email: 'bot@example.com', website: 'x', startedAt: Date.now() - 10_000 }, '203.0.113.4');
     assert.equal(response.status, 202);
     const all = await (await admin.GET(adminRequest('GET'))).json();
-    assert.ok(!all.reviews.some((r: { email: string }) => r.email === 'bot@example.com'));
+    assert.equal(all.reviews.length, 2);
   });
 
   it('rate-limits to 3 submissions per IP per day', async () => {
@@ -143,13 +143,21 @@ describe('reviews API', () => {
     assert.deepEqual(statuses, [201, 201, 201, 429]);
   });
 
+  it('never stores email addresses, even for the admin', async () => {
+    const { readFileSync } = await import('node:fs');
+    const saved = readFileSync(process.env.REVIEWS_FILE!, 'utf8');
+    assert.ok(!saved.includes('@example.com'), 'an email address was written to storage');
+    const all = await (await admin.GET(adminRequest('GET'))).json();
+    assert.ok(!JSON.stringify(all).includes('@example.com'));
+  });
+
   it('protects admin with the token', async () => {
     assert.equal((await admin.GET(adminRequest('GET', undefined, undefined, 'wrong-token-wrong-token'))).status, 401);
   });
 
   it('lets the admin publish, hide and delete reviews', async () => {
-    const all = (await (await admin.GET(adminRequest('GET'))).json()).reviews as Array<{ id: string; email: string; status: string }>;
-    const held = all.find((r) => r.email === 'spam@example.com')!;
+    const all = (await (await admin.GET(adminRequest('GET'))).json()).reviews as Array<{ id: string; status: string }>;
+    const held = all.find((r) => r.status === 'pending')!;
     assert.equal(held.status, 'pending');
 
     await admin.PATCH(adminRequest('PATCH', undefined, { id: held.id, status: 'published' }));

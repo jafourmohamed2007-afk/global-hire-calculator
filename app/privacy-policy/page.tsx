@@ -38,9 +38,10 @@ export default function PrivacyPolicyPage() {
           </li>
           <li>
             <strong>Reviews:</strong> when you submit a review we store your name, optional role or company, rating,
-            review text, email address and the submission date. Your name, role, rating, text and date are published with
-            your consent. Your email address is never published; we use it only to prevent duplicate reviews and to contact
-            you about your review. To limit spam, we also keep a one-way hash of your IP address for 24 hours.
+            review text and the submission date, and publish them with your consent. We do not store your email address:
+            we keep only a one-way scrambled code made from it, which cannot be turned back into the address, so the same
+            person can’t review twice. To limit spam, we also keep a one-way scrambled code of your IP address for 24
+            hours.
           </li>
         </ul>
 
@@ -81,9 +82,9 @@ export default function PrivacyPolicyPage() {
 
         <h2>Review storage</h2>
         <p>
-          Reviews are stored with our database provider and kept until you ask us to remove them. You can ask us to
-          correct or delete your review at any time by emailing <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{' '}
-          from the address you used.
+          Reviews are stored with our database provider and kept until you ask us to remove them. To have your review
+          corrected or deleted, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with the name shown on your
+          review and the date you posted it.
         </p>
 
         <h2>How we use information</h2>

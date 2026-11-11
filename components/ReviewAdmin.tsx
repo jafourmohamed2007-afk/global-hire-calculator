@@ -143,9 +143,7 @@ export function ReviewAdmin() {
                   </span>
                 </div>
                 <p className="mt-2 whitespace-pre-line break-words text-sm text-slate-700">{review.text}</p>
-                <p className="mt-2 break-all text-xs text-slate-500">
-                  {review.email} · {new Date(review.date).toLocaleString('en-US')}
-                </p>
+                <p className="mt-2 text-xs text-slate-500">{new Date(review.date).toLocaleString('en-US')}</p>
                 {review.flags.length > 0 && (
                   <p className="mt-1 text-xs font-medium text-amber-800">Held because: {review.flags.join(', ')}</p>
                 )}

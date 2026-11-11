@@ -195,7 +195,7 @@ export function ReviewForm({ onPublished }: ReviewFormProps) {
 
       <div>
         <label htmlFor={`${id}-email`} className="block text-sm font-semibold text-ink">
-          Email <span className="font-normal text-slate-500">(never published)</span>
+          Email <span className="font-normal text-slate-500">(not published or stored)</span>
         </label>
         <input
           id={`${id}-email`}
@@ -224,8 +224,8 @@ export function ReviewForm({ onPublished }: ReviewFormProps) {
             {...field('consent')}
           />
           <span>
-            I agree that my name, role, rating and review are published on this site. My email stays private and is only
-            used to prevent duplicates and contact me about my review. See the{' '}
+            I agree that my name, role, rating and review are published on this site. My email is only used to check that I
+            haven’t already left a review, and is not stored. See the{' '}
             <Link href="/privacy-policy" className="font-semibold text-brand-700 underline underline-offset-2">
               privacy policy
             </Link>

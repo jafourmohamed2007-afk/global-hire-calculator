@@ -1,5 +1,5 @@
 import { getReviewStore } from '@/lib/reviews/store';
-import { hashIdentifier, isAdmin, json } from '@/lib/reviews/server';
+import { isAdmin, json } from '@/lib/reviews/server';
 import type { ReviewStatus } from '@/lib/reviews/types';
 
 export const dynamic = 'force-dynamic';
@@ -12,7 +12,7 @@ function guard(request: Request) {
   return null;
 }
 
-/** All reviews, including email addresses and moderation flags. */
+/** All reviews with their moderation status and flags. */
 export async function GET(request: Request) {
   const denied = guard(request);
   if (denied) return denied;
@@ -45,6 +45,6 @@ export async function DELETE(request: Request) {
   const review = await store.get(id);
   if (!review) return json({ error: 'Review not found.' }, 404);
   await store.remove(id);
-  await store.releaseEmail(hashIdentifier(review.email));
+  await store.releaseEmail(review.emailHash);
   return json({ deleted: id });
 }

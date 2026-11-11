@@ -11,9 +11,12 @@ export interface PublicReview {
   readonly date: string;
 }
 
-/** What the database keeps. */
+/**
+ * What the database keeps. The email address itself is never stored: only a one-way hash,
+ * used to stop the same person reviewing twice.
+ */
 export interface StoredReview extends PublicReview {
-  readonly email: string;
+  readonly emailHash: string;
   readonly status: ReviewStatus;
   /** Reasons automatic moderation held the review back (empty when auto-published). */
   readonly flags: readonly string[];

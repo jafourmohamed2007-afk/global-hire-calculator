@@ -59,9 +59,12 @@ export async function POST(request: Request) {
       return json({ errors: { email: 'A review has already been submitted with this email address.' } }, 409);
     }
 
+    // The email is used only to compute the duplicate-check hash and is then discarded.
+    const { email: _email, ...reviewFields } = result.value;
     const review: StoredReview = {
       id: randomUUID(),
-      ...result.value,
+      ...reviewFields,
+      emailHash,
       date: new Date().toISOString(),
       status: result.flags.length === 0 ? 'published' : 'pending',
       flags: result.flags,

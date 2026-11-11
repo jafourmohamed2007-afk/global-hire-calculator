@@ -282,7 +282,7 @@ export default async function HirePage({ params }: HirePageProps) {
             <h3 className="mt-5 font-bold text-ink">Employee vs. contractor at the market average</h3>
             <dl className="mt-2 divide-y divide-slate-100 rounded-xl border border-slate-200 text-sm">
               <div className="flex justify-between gap-3 px-3 py-2.5">
-                <dt className="text-slate-600">Contractor (invoice only)</dt>
+                <dt className="text-slate-600">Contractor invoicing the same amount</dt>
                 <dd className="font-bold tabular-nums text-ink">{inHq(cost.baseSalaryUSD)}</dd>
               </div>
               <div className="flex justify-between gap-3 px-3 py-2.5">

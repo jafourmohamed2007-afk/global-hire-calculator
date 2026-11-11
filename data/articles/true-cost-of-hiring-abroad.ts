@@ -21,7 +21,7 @@ export const trueCostOfHiringAbroad: Article = {
     { type: 'h2', text: 'Layer 1: the local gross salary' },
     {
       type: 'p',
-      text: 'Start with the gross annual salary in the candidate’s country, not a converted US salary. Salary surveys for software developers disagree widely, so use a range rather than a single average. For a mid-level developer in 2026, typical ranges are roughly $12,000–$25,000 in India, $10,000–$22,000 in the Philippines, $31,000–$45,000 in Brazil and $38,000–$58,000 in Poland.',
+      text: 'Start with the gross annual salary in the candidate’s country, not a converted US salary. Salary surveys for software developers disagree widely, so use a range rather than a single average. For a mid-level developer in 2026, typical ranges are roughly $12,000–$22,000 in India, $10,000–$22,000 in the Philippines, $31,000–$42,000 in Brazil and $38,000–$58,000 in Poland.',
     },
     {
       type: 'p',

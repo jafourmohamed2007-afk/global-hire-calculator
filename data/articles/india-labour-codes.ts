@@ -33,12 +33,12 @@ export const indiaLabourCodes: Article = {
     },
     {
       type: 'p',
-      text: 'Employers may legally limit Provident Fund to the ₹15,000 monthly wage ceiling, which caps the employer’s 12% at ₹1,800 a month. Many technology employers contribute on the full basic salary instead, because candidates value the retirement savings. Our calculator uses the full basic salary, which is the more conservative budget.',
+      text: 'Employers may legally limit Provident Fund to the ₹15,000 monthly wage ceiling, which caps the employer’s 12% at ₹1,800 a month. Other employers contribute on the full basic salary. Our calculator uses the full basic salary, which is the more conservative budget.',
     },
     { type: 'h2', text: 'Gratuity' },
     {
       type: 'p',
-      text: 'Gratuity is a lump sum paid when employment ends: 15 days of the last basic wage for each completed year of service, using a 26-working-day month. That works out to about **4.81% of basic wages per year**, or roughly 2.4% of total pay when basic is half the package. Gratuity normally requires five years of continuous service, but the Codes make fixed-term employees eligible after one year.',
+      text: 'Gratuity is a lump sum paid when employment ends: 15 days of the last basic wage for each completed year of service, using a 26-working-day month. That works out to about **4.81% of basic wages per year**, or roughly 2.4% of total pay when basic is half the package. Gratuity normally requires five years of continuous service, but the Codes make fixed-term employees eligible on a pro-rata basis after one year.',
     },
     { type: 'h2', text: 'Worked example: $18,000 a year' },
     {
@@ -64,7 +64,7 @@ export const indiaLabourCodes: Article = {
       items: [
         'Employers must withhold income tax (TDS) monthly and issue Form 16.',
         'Professional Tax and Labour Welfare Fund contributions depend on the state.',
-        'Earned leave is typically 12–21 days per year under state Shops & Establishments Acts, plus national and festival holidays.',
+        'Paid annual (earned) leave is set by each state’s Shops and Establishments Act and differs between states, plus national and festival holidays.',
       ],
     },
     { type: 'h2', text: 'Contractors and permanent establishment' },

@@ -12,7 +12,7 @@ export const ukraineHiringGuide: Article = {
   blocks: [
     {
       type: 'p',
-      text: 'Ukrainian engineers have kept delivering for international clients throughout the war, and the country remains one of Europe’s largest outsourcing markets. Employer contributions are simple — a single social contribution — but most developers work as private entrepreneurs rather than employees, and martial law adds risks that every foreign company should plan for.',
+      text: 'Ukraine has a large software development and outsourcing industry that has continued to serve international clients during the war. Employer contributions are simple — a single social contribution — but most developers work as private entrepreneurs rather than employees, and martial law adds risks that every foreign company should plan for.',
     },
     { type: 'h2', text: 'Employer contribution: ESV' },
     {
@@ -59,9 +59,9 @@ export const ukraineHiringGuide: Article = {
       type: 'ul',
       items: [
         '**Mobilisation:** male employees of conscription age may be called up. Some employers can apply to reserve critical staff, subject to official criteria.',
-        '**Business continuity:** power outages and connectivity disruptions still happen, so teams often rely on backup power and flexible schedules.',
+        '**Business continuity:** power outages and connectivity disruptions can happen, so teams may need backup power and flexible schedules.',
         '**Banking and currency controls:** cross-border payments work, but rules can change at short notice.',
-        '**Leave and holidays:** employees are entitled to 24 calendar days of paid annual leave; the usual transfer of holidays to working days is suspended under martial law.',
+        '**Leave and holidays:** employees are entitled to 24 calendar days of paid annual leave, and under martial law public holidays are normal working days unless the employer decides otherwise.',
       ],
     },
     {

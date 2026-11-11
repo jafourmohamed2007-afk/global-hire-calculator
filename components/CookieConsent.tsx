@@ -40,7 +40,7 @@ export function CookieConsent() {
             We value your privacy
           </p>
           <p id="cookie-consent-text" className="mt-1 text-sm text-slate-600">
-            We use cookies to run this site and, with your permission, Google AdSense uses cookies to show and measure
+            We save your cookie choice on your device and, with your permission, Google AdSense uses cookies to show and measure
             personalized ads. You can change your choice at any time from “Cookie settings” in the footer.
           </p>
           <Link

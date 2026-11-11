@@ -12,7 +12,7 @@ export const vietnamSocialInsurance: Article = {
   blocks: [
     {
       type: 'p',
-      text: 'Vietnam’s engineering talent pool has grown quickly, and Ho Chi Minh City, Hanoi and Da Nang now host large software teams for overseas clients. Employer contributions are straightforward — four components and no mandatory 13th month — but there is an important legal hurdle: a foreign company cannot simply employ someone in Vietnam without a local presence.',
+      text: 'Ho Chi Minh City, Hanoi and Da Nang host many software teams working for overseas clients. Employer contributions are straightforward — four components and no mandatory 13th month — but there is an important legal hurdle: a foreign company cannot simply employ someone in Vietnam without a local presence.',
     },
     { type: 'h2', text: 'Employer contributions' },
     {
@@ -51,7 +51,7 @@ export const vietnamSocialInsurance: Article = {
     { type: 'h2', text: 'The 13th-month Tết bonus' },
     {
       type: 'p',
-      text: 'A 13th-month bonus paid before the Lunar New Year (Tết) is so common in Vietnamese tech that many candidates treat it as part of the package. It is not legally required unless your contract or company policy promises it, which is why our calculator does not include it by default. Budget for it if you want competitive offers.',
+      text: 'A 13th-month bonus paid before the Lunar New Year (Tết) is common in Vietnamese tech. It is not legally required unless your contract or company policy promises it, which is why our calculator does not include it by default. Budget for it if you want competitive offers.',
     },
     { type: 'h2', text: 'Leave and working conditions' },
     {

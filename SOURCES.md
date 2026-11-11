@@ -40,8 +40,8 @@ Salary surveys disagree widely, so the app shows a **range** and uses a mid-poin
 
 | Country | Range | Mid-point | Sources |
 |---|---|---|---|
-| India | 12k–25k | 18k | [devtoollab](https://devtoollab.com/blog/vietnam-vs-india-software-engineers), [itsourcecode](https://itsourcecode.com/blogs/programmer-salary-by-country-2026/) |
-| Brazil | 31k–45k | 36k | [Uvik](https://uvik.net/blog/global-software-developer-rates-2026/), [Howdy](https://www.howdy.com/blog/brazil-software-engineer-salary-hiring-cost-benchmarks) |
+| India | 12k–22k | 18k | [devtoollab](https://devtoollab.com/blog/vietnam-vs-india-software-engineers), [itsourcecode](https://itsourcecode.com/blogs/programmer-salary-by-country-2026/) |
+| Brazil | 31k–42k | 36k | [Uvik](https://uvik.net/blog/global-software-developer-rates-2026/), [Howdy](https://www.howdy.com/blog/brazil-software-engineer-salary-hiring-cost-benchmarks) |
 | Poland | 38k–58k | 46k | [Jobicy](https://jobicy.com/salaries/pl/software-developer), [OctogleHire](https://www.octoglehire.com/rates/poland) |
 | Philippines | 10k–22k | 16k | [Second Talent](https://www.secondtalent.com/developer-rate-card/philippines/), [Omnivoo](https://omnivoo.com/blog/cost-to-hire-developers-philippines-2026) |
 | Mexico | 34k–50k | 38k | [Uvik](https://uvik.net/blog/global-software-developer-rates-2026/), [Howdy](https://www.howdy.com/blog/mexico-software-engineer-salary-hiring-cost-benchmarks-2026) |
@@ -55,3 +55,13 @@ Salary surveys disagree widely, so the app shows a **range** and uses a mid-poin
 |---|---|---|
 | Deel | $599/employee/month | [Gloroots](https://gloroots.com/blog/deel-pricing), [Costbench](https://costbench.com/compare/deel-vs-remote) |
 | Remote | $599 billed annually, $699 billed monthly (cut from $699 in Oct 2026) | [PricingSaaS](https://pricingsaas.com/companies/remote/diffs/2026W43), [Gloroots](https://gloroots.com/blog/remote-pricing) |
+
+## Additional checks (11 November 2026)
+
+| Fact | Source |
+|---|---|
+| Mexico CEAV employer rate 7.513% above 4.01 UMA in 2026 | [elcontribuyente.mx](https://www.elcontribuyente.mx/indicadores/cuotas-imss/), [contadormx.com](https://contadormx.com/cuotas-imss-2026-tablas-porcentajes-y-fechas/) |
+| Vietnam Region I minimum wage VND 5.31M (Decree 293/2025) | [Baker McKenzie](https://www.bakermckenzie.com/en/insight/publications/2026/03/vietnam-change-to-the-regional-minimum-wage-in-2026) |
+| India: fixed-term employees get pro-rata gratuity after one year | [BDO India](https://www.bdo.in/en-gb/news/2025/gratuity-payment-after-1-year-of-service-for-salaried-employees-under-fixed-term-employment;-know-ho), [Fisher Phillips](https://www.fisherphillips.com/en/insights/insights/indias-new-labor-codes-expand-gratuity-payment-rules) |
+| Brazil 13th salary due by 30 November and 20 December | [The Brazil Business](https://thebrazilbusiness.com/article/13th-salary-in-brazil) |
+| Ukraine: public holidays are working days under martial law | [Verkhovna Rada research service](https://research.rada.gov.ua/en/documents/analyticRSmaterialsDocs_en/hum_social_policy_en/inform_references-hsp_en/77458.html) |

@@ -12,7 +12,7 @@ export const brazilCltCost: Article = {
   blocks: [
     {
       type: 'p',
-      text: 'Brazil has one of the largest developer markets in Latin America and a time zone that suits North American teams. It also has one of the most expensive and protective employment systems in the world. If you hire an employee under Brazil’s labour code, the CLT, expect the true cost to be roughly **51% above the salary**.',
+      text: 'Brazil has one of the largest developer markets in Latin America and a time zone that suits North American teams. It also has a strongly protective and relatively expensive employment system. If you hire an employee under Brazil’s labour code, the CLT, expect the true cost to be roughly **51% above the salary**.',
     },
     { type: 'h2', text: 'Employer contributions' },
     {
@@ -34,7 +34,7 @@ export const brazilCltCost: Article = {
     { type: 'h2', text: 'The 13th salary and vacation bonus' },
     {
       type: 'p',
-      text: 'Every CLT employee receives a **13th salary** — one extra month of pay each year, usually paid in two instalments before December. They also receive 30 calendar days of paid vacation with a constitutional **one-third bonus** on top of vacation pay. Together these add about 11.1% to the annual base salary.',
+      text: 'Every CLT employee receives a **13th salary** — one extra month of pay each year, paid in two instalments: the first by 30 November and the second by 20 December. They also receive 30 calendar days of paid vacation with a constitutional **one-third bonus** on top of vacation pay. Together these add about 11.1% to the annual base salary.',
     },
     {
       type: 'p',
@@ -57,7 +57,7 @@ export const brazilCltCost: Article = {
     { type: 'h2', text: 'Benefits developers expect' },
     {
       type: 'p',
-      text: 'Beyond the statutory minimum, meal or food vouchers (VR/VA) and private health insurance are standard expectations in tech. The transportation voucher (vale-transporte) is statutory for commuting employees, though it matters less for fully remote roles. Budget for these when you compare offers.',
+      text: 'Beyond the statutory minimum, meal or food vouchers (VR/VA) and private health insurance are common in tech. The transportation voucher (vale-transporte) is statutory for commuting employees, though it matters less for fully remote roles. Budget for these when you compare offers.',
     },
     { type: 'h2', text: 'Ending employment' },
     {

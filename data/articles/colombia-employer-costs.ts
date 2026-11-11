@@ -12,7 +12,7 @@ export const colombiaEmployerCosts: Article = {
   blocks: [
     {
       type: 'p',
-      text: 'Colombia, and Medellín and Bogotá in particular, has become one of the busiest nearshoring hubs for US companies. Its employer contributions look moderate at first glance, but mandatory benefits are among the highest in our calculator. For a mid-level developer, the true cost is about **34% above the base salary**.',
+      text: 'Colombia, especially Bogotá and Medellín, is a popular nearshoring destination for US companies. Its employer contributions look moderate at first glance, but mandatory benefits are among the highest in our calculator. For a mid-level developer, the true cost is about **34% above the base salary**.',
     },
     { type: 'h2', text: 'Employer contributions' },
     {

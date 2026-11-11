@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>Review storage</h2>
         <p>
-          Reviews are stored with our database provider (Upstash) and kept until you ask us to remove them. You can ask us to
+          Reviews are stored with our database provider and kept until you ask us to remove them. You can ask us to
           correct or delete your review at any time by emailing <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{' '}
           from the address you used.
         </p>

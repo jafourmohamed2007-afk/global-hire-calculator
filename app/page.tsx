@@ -117,7 +117,7 @@ export default function HomePage() {
             className="scroll-mt-20 rounded-3xl border border-slate-200 bg-white p-4 shadow-xl shadow-slate-900/5 sm:p-6"
           >
             <h2 className="text-xl font-bold tracking-tight text-ink">Start your hiring cost estimate</h2>
-            <p className="mb-5 mt-1 text-sm text-slate-600">Two taps. Real numbers. Zero guesswork.</p>
+            <p className="mb-5 mt-1 text-sm text-slate-600">Choose two countries to see the full cost.</p>
             <HireRouteSelector />
           </div>
         </div>

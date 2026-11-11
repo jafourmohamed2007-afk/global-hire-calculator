@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <PageShell
       title="Contact us"
-      intro="Questions, corrections or feedback about the calculator? We read every message."
+      intro="Questions, corrections or feedback about the calculator? Get in touch."
     >
       <div className="rounded-2xl border border-slate-200 bg-white p-5">
         <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Email</p>

@@ -44,15 +44,18 @@ export default function AboutPage() {
             own rate, salary cap and threshold, rather than a single flat percentage.
           </li>
           <li>
-            Rates are checked against official agencies and established payroll references, and every figure has a source
-            in the project’s source list.
+            Rates are checked against official sources where available and against established payroll guides, and every
+            figure has a listed source.
           </li>
           <li>Exchange rates are mid-market reference rates, last updated on {FX_RATES_AS_OF}.</li>
           <li>
             Our calculations are covered by automated tests that compare the results with examples worked out by hand from
             the statutory rates.
           </li>
-          <li>We review rates every January and July, when many countries change their caps and minimum wages.</li>
+          <li>
+            Rates were last reviewed in November 2026. Many countries change their caps and minimum wages in January and
+            July.
+          </li>
         </ul>
 
         <h2>Editorial independence and funding</h2>

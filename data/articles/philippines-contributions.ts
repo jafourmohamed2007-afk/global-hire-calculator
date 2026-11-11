@@ -12,7 +12,7 @@ export const philippinesContributions: Article = {
   blocks: [
     {
       type: 'p',
-      text: 'The Philippines is one of the most popular destinations for remote hiring, thanks to strong English skills and overlap with both US and Australian working hours. Employer contributions are modest because each government scheme has a salary cap. The larger statutory cost is the **13th-month pay**.',
+      text: 'The Philippines is a popular destination for remote hiring, helped by widespread English and working hours that can overlap with both the US and Australia. Employer contributions are modest because each government scheme has a salary cap. The larger statutory cost is the **13th-month pay**.',
     },
     { type: 'h2', text: 'The three government contributions' },
     {
@@ -33,7 +33,7 @@ export const philippinesContributions: Article = {
     { type: 'h2', text: '13th-month pay' },
     {
       type: 'p',
-      text: 'Rank-and-file employees are entitled to 13th-month pay equal to one-twelfth of their basic salary earned during the year, paid no later than **24 December**. It is not a discretionary bonus: if you employ someone for part of a year, they receive a pro-rated amount. Most developers are rank-and-file employees under the law, so budget for it.',
+      text: 'Rank-and-file employees are entitled to 13th-month pay equal to one-twelfth of their basic salary earned during the year, paid no later than **24 December**. It is not a discretionary bonus: if you employ someone for part of a year, they receive a pro-rated amount. Developers who are not managers are generally rank-and-file employees, so budget for it.',
     },
     { type: 'h2', text: 'Worked example: $16,000 a year' },
     {
@@ -55,8 +55,8 @@ export const philippinesContributions: Article = {
       type: 'ul',
       items: [
         'The legal minimum is 5 days of Service Incentive Leave after one year of service.',
-        'In tech, 15 or more days of combined vacation and sick leave is the market standard.',
-        'Private HMO health coverage is not mandatory, but developers expect it in competitive roles.',
+        'Many tech employers offer more paid leave than the legal minimum.',
+        'Private HMO health coverage is not mandatory, but it is commonly offered by tech employers.',
       ],
     },
     { type: 'h2', text: 'Regularization: the rule that surprises foreign employers' },

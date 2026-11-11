@@ -12,7 +12,7 @@ export const polandB2bVsEmployment: Article = {
   blocks: [
     {
       type: 'p',
-      text: 'Poland is one of Europe’s largest and most experienced software engineering markets. It is also unusual in how many senior developers work on **B2B contracts** as self-employed sole traders rather than as employees. Understanding both models helps you make an offer that is competitive and compliant.',
+      text: 'Poland has a large and experienced software engineering market. It is also unusual in how many senior developers work on **B2B contracts** as self-employed sole traders rather than as employees. Understanding both models helps you make an offer that is competitive and compliant.',
     },
     { type: 'h2', text: 'Employment contract (umowa o pracę)' },
     {

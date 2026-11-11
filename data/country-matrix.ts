@@ -120,7 +120,7 @@ const TALENT_COUNTRY_DATA = [
     currencyCode: 'INR',
     usdToLocalRate: 93.6,
     avgDevSalaryUSD: 18000,
-    salaryRangeUSD: [12000, 25000],
+    salaryRangeUSD: [12000, 22000],
     employerContributions: [
       { label: 'Provident Fund + Pension Scheme (EPF/EPS) on basic wages', rate: 0.12, baseShare: 0.5 },
       { label: 'EPF administration charges', rate: 0.005, baseShare: 0.5 },
@@ -145,7 +145,7 @@ const TALENT_COUNTRY_DATA = [
       'Professional Tax and Labour Welfare Fund contributions vary by state; employers must also withhold income tax (TDS) monthly.',
     ],
     paidLeaveSummary:
-      'Earned leave of roughly 12–21 days per year under state Shops & Establishments Acts, plus national and festival holidays.',
+      'Paid annual (earned) leave is set by each state’s Shops and Establishments Act and differs between states, plus national and festival holidays.',
     contractorModel:
       'Contractors invoice as sole proprietors and pay their own income tax and 18% GST where registered; exports of services can be zero-rated.',
   },
@@ -156,7 +156,7 @@ const TALENT_COUNTRY_DATA = [
     currencyCode: 'BRL',
     usdToLocalRate: 5.51,
     avgDevSalaryUSD: 36000,
-    salaryRangeUSD: [31000, 45000],
+    salaryRangeUSD: [31000, 42000],
     employerContributions: [
       { label: 'INSS employer social security', rate: 0.2 },
       { label: 'RAT/SAT work-accident insurance (1–3%, 2% used)', rate: 0.02 },
@@ -235,10 +235,10 @@ const TALENT_COUNTRY_DATA = [
       'PhilHealth: 5% premium split equally — employer pays 2.5% on salary up to ₱100,000/month.',
       'Pag-IBIG housing fund: employer contributes 2% of compensation up to ₱10,000/month (₱200/month maximum).',
       'Mandatory 13th-month pay equal to one-twelfth of basic annual salary for rank-and-file employees, due by 24 December.',
-      'HMO private health coverage is not mandatory but is expected by developers in competitive markets.',
+      'HMO private health coverage is not mandatory but is commonly offered by tech employers.',
     ],
     paidLeaveSummary:
-      'Minimum 5 days of Service Incentive Leave after one year; 15+ days of vacation and sick leave is market standard for tech roles.',
+      'Minimum 5 days of Service Incentive Leave after one year of service; many tech employers offer more.',
     contractorModel:
       'Freelancers register with the BIR as self-employed, pay graduated or 8% flat income tax, and issue official receipts or invoices.',
   },
@@ -373,9 +373,10 @@ const TALENT_COUNTRY_DATA = [
       'Unified Social Contribution (ESV) of 22% paid by the employer, on salary up to 20× the minimum wage (UAH 172,940/month in 2026; minimum wage UAH 8,647).',
       'Employer withholds 18% personal income tax and the 5% military levy from employee pay.',
       'Employment contracts must be registered and paid through a Ukrainian entity or an Employer of Record.',
-      'Diia.City residents can access a special 5% PIT regime and reduced ESV for gig specialists.',
+      'Companies in Diia.City, Ukraine’s special regime for tech companies, can use gig contracts with their own tax rules.',
     ],
-    paidLeaveSummary: '24 calendar days of paid annual leave, plus public holidays (holiday transfers suspended under martial law).',
+    paidLeaveSummary:
+      '24 calendar days of paid annual leave. Under martial law, public holidays are normal working days unless the employer decides otherwise.',
     contractorModel:
       'FOP “Group 3” single-tax entrepreneurs pay 5% of revenue plus a fixed minimum ESV (UAH 1,902/month in 2026) and invoice foreign clients in USD or EUR.',
   },
@@ -412,7 +413,7 @@ export const COMPANY_COUNTRIES = [
     currencyCode: 'CAD',
     usdToLocalRate: 1.412,
     crossBorderNote:
-      'Canadian companies paying non-residents for services performed outside Canada generally have no Regulation 102 withholding. Keep contracts, invoices and proof of work location to support the expense deduction.',
+      'Canadian payroll withholding (Regulation 102 for employees, Regulation 105 for contractors) applies to services performed in Canada, so it generally does not apply to work done entirely abroad. Keep contracts, invoices and proof of work location.',
   },
   {
     slug: 'germany',
@@ -432,7 +433,7 @@ export const COMPANY_COUNTRIES = [
     currencyCode: 'AUD',
     usdToLocalRate: 1.456,
     crossBorderNote:
-      'Australian employers generally have no PAYG withholding or Superannuation Guarantee obligation for non-residents working wholly overseas. Collect invoices (no ABN required) and review GST reverse-charge rules for imported services.',
+      'Australian employers generally have no PAYG withholding or Superannuation Guarantee obligation for non-residents working wholly overseas. Pay contractors against invoices and review GST reverse-charge rules for imported services.',
   },
   {
     slug: 'singapore',

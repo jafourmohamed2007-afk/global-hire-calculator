@@ -231,7 +231,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <ReviewsSection />
+      <ReviewsSection limit={6} />
 
       {/* ───────────── Corridor directory (internal linking) ───────────── */}
       <section aria-labelledby="directory-heading" className="mx-auto w-full max-w-6xl px-4 pt-12 sm:px-6">

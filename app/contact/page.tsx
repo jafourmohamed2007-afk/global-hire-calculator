@@ -33,8 +33,8 @@ export default function ContactPage() {
             link to the official source.
           </li>
           <li>
-            <strong>Reviews and feedback:</strong> tell us how the calculator helped you plan a hire. With your permission,
-            we may publish your review exactly as you wrote it.
+            <strong>Reviews:</strong> you can publish a review yourself on our{' '}
+            <Link href="/reviews">reviews page</Link>. Email us if you want yours changed or removed.
           </li>
           <li>
             <strong>Privacy requests:</strong> to exercise your data rights, see our{' '}

@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
+    { url: absoluteUrl('/reviews'), lastModified, changeFrequency: 'daily' as const, priority: 0.5 },
     ...['/about', '/contact', '/privacy-policy', '/terms', '/cookie-policy', '/disclaimer'].map((path) => ({
       url: absoluteUrl(path),
       lastModified,

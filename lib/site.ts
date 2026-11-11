@@ -35,8 +35,5 @@ function resolveContactEmail(): string {
 /** Public contact address shown on the Contact, Privacy and Terms pages. */
 export const CONTACT_EMAIL = resolveContactEmail();
 
-/** Optional link to a feedback/review form (e.g. a Google Form) for collecting genuine user reviews. */
-export const FEEDBACK_URL = process.env.NEXT_PUBLIC_FEEDBACK_URL?.trim() || '';
-
 /** Date the legal pages were last updated. */
 export const POLICIES_LAST_UPDATED = '11 November 2026';

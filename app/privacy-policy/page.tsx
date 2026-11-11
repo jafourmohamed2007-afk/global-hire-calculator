@@ -34,7 +34,13 @@ export default function PrivacyPolicyPage() {
           </li>
           <li>
             <strong>Messages you send us:</strong> if you email us, we receive your email address and message and use them
-            only to reply and, if you agree, to publish your review.
+            only to reply.
+          </li>
+          <li>
+            <strong>Reviews:</strong> when you submit a review we store your name, optional role or company, rating,
+            review text, email address and the submission date. Your name, role, rating, text and date are published with
+            your consent. Your email address is never published; we use it only to prevent duplicate reviews and to contact
+            you about your review. To limit spam, we also keep a one-way hash of your IP address for 24 hours.
           </li>
         </ul>
 
@@ -71,6 +77,13 @@ export default function PrivacyPolicyPage() {
           Until you make a choice in our cookie banner, ad requests are paused. If you reject non-essential cookies, Google
           is asked to show only non-personalized ads. You can change your choice at any time with “Cookie settings” in the
           footer. See our <Link href="/cookie-policy">cookie policy</Link> for details.
+        </p>
+
+        <h2>Review storage</h2>
+        <p>
+          Reviews are stored with our database provider (Upstash) and kept until you ask us to remove them. You can ask us to
+          correct or delete your review at any time by emailing <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{' '}
+          from the address you used.
         </p>
 
         <h2>How we use information</h2>

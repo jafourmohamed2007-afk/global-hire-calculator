@@ -86,6 +86,7 @@ const FOOTER_SECTIONS = [
   {
     title: 'Company',
     links: [
+      { href: '/reviews', label: 'Reviews' },
       { href: '/about', label: 'About us' },
       { href: '/contact', label: 'Contact' },
       { href: '/privacy-policy', label: 'Privacy policy' },

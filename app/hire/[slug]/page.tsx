@@ -5,6 +5,7 @@ import { CostCalculator } from '@/components/CostCalculator';
 import { JsonLd } from '@/components/JsonLd';
 import { PartnerCards } from '@/components/PartnerCards';
 import { RiskBadge } from '@/components/RiskBadge';
+import { getArticlesForCountry } from '@/data/articles';
 import {
   COMPANY_COUNTRIES,
   DATA_YEAR,
@@ -15,7 +16,7 @@ import {
   type CompanyCountry,
   type TalentCountry,
 } from '@/data/country-matrix';
-import { EOR_MONTHLY_FEE_USD } from '@/data/partners';
+import { EOR_MONTHLY_FEE_USD, SHOW_PARTNER_OFFERS } from '@/data/partners';
 import { calculateHireCost, convertFromUSD, type CostBreakdown } from '@/lib/cost-engine';
 import { formatCurrency, formatPercent } from '@/lib/format';
 import { SITE_NAME, absoluteUrl } from '@/lib/site';
@@ -95,7 +96,7 @@ function buildFaq(company: CompanyCountry, talent: TalentCountry, cost: CostBrea
     },
     {
       question: `Can a company in ${company.nameInSentence} hire in ${talent.countryName} without a local entity?`,
-      answer: `Yes. An Employer of Record (EOR) such as Deel or Remote becomes the legal employer in ${talent.countryName}, runs compliant local payroll, withholds taxes and provides mandatory benefits, while your company directs the day-to-day work. Alternatively, a genuinely independent contractor can invoice you directly. ${talent.contractorModel}`,
+      answer: `Yes. An Employer of Record (EOR) becomes the legal employer in ${talent.countryName}, runs compliant local payroll, withholds taxes and provides mandatory benefits, while your company directs the day-to-day work. Alternatively, a genuinely independent contractor can invoice you directly. ${talent.contractorModel}`,
     },
     {
       question: `How much paid leave do employees in ${talent.countryName} get?`,
@@ -117,6 +118,7 @@ export default async function HirePage({ params }: HirePageProps) {
   const faq = buildFaq(company, talent, cost);
   const inHq = (usd: number) => formatCurrency(convertFromUSD(usd, company.usdToLocalRate), company.currencyCode);
 
+  const relatedGuides = getArticlesForCountry(talent.slug);
   const otherTalent = TALENT_COUNTRIES.filter((t) => t.slug !== talent.slug);
   const otherCompanies = COMPANY_COUNTRIES.filter((c) => c.slug !== company.slug);
 
@@ -248,7 +250,7 @@ export default async function HirePage({ params }: HirePageProps) {
         <CostCalculator
           company={company}
           talent={talent}
-          partnerSlot={<PartnerCards talentCountryName={talent.countryName} />}
+          partnerSlot={SHOW_PARTNER_OFFERS ? <PartnerCards talentCountryName={talent.countryName} /> : undefined}
         />
 
         {/* ───────────── Local rules ───────────── */}
@@ -296,6 +298,29 @@ export default async function HirePage({ params }: HirePageProps) {
             </dl>
           </section>
         </div>
+
+        {/* ───────────── Related guides ───────────── */}
+        {relatedGuides.length > 0 && (
+          <section aria-labelledby="guides-heading" className="mt-12">
+            <h2 id="guides-heading" className="text-2xl font-bold tracking-tight text-ink">
+              Guides for hiring in {talent.countryName}
+            </h2>
+            <ul className="mt-4 grid grid-cols-1 gap-3 lg:grid-cols-3">
+              {relatedGuides.map((guide) => (
+                <li key={guide.slug}>
+                  <Link
+                    href={`/blog/${guide.slug}`}
+                    className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 hover:border-brand-300 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">{guide.category}</span>
+                    <span className="mt-1 font-bold leading-snug text-ink group-hover:text-brand-700">{guide.title}</span>
+                    <span className="mt-2 text-sm text-slate-600">{guide.description}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* ───────────── FAQ ───────────── */}
         <section aria-labelledby="faq-heading" className="mt-12">

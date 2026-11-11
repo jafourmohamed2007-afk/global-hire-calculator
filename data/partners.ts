@@ -18,6 +18,12 @@ export interface EorPartner {
   readonly accentClass: string;
 }
 
+/**
+ * Partner (affiliate) placements are OFF until you are approved by the partner programs.
+ * Turn them on by setting NEXT_PUBLIC_SHOW_PARTNERS=true and your affiliate URLs.
+ */
+export const SHOW_PARTNER_OFFERS = process.env.NEXT_PUBLIC_SHOW_PARTNERS === 'true';
+
 /** Published EOR list price of both Deel and Remote (Nov 2026), used for the optional "EOR fee" line. */
 export const EOR_MONTHLY_FEE_USD = 599;
 

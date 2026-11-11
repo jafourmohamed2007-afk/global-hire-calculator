@@ -3,7 +3,10 @@ import Link from 'next/link';
 import { HireRouteSelector } from '@/components/HireRouteSelector';
 import { JsonLd } from '@/components/JsonLd';
 import { PartnerCards } from '@/components/PartnerCards';
+import { SHOW_PARTNER_OFFERS } from '@/data/partners';
+import { ReviewsSection } from '@/components/ReviewsSection';
 import { RiskBadge } from '@/components/RiskBadge';
+import { ARTICLES, formatArticleDate, readingMinutes } from '@/data/articles';
 import {
   COMPANY_COUNTRIES,
   DATA_YEAR,
@@ -190,10 +193,45 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* ───────────── Partners ───────────── */}
-      <div className="mx-auto w-full max-w-6xl px-4 pt-12 sm:px-6">
-        <PartnerCards heading="Ready to hire? Let an Employer of Record handle payroll & compliance" />
-      </div>
+      {/* ───────────── Partners (hidden until affiliate approval) ───────────── */}
+      {SHOW_PARTNER_OFFERS && (
+        <div className="mx-auto w-full max-w-6xl px-4 pt-12 sm:px-6">
+          <PartnerCards heading="Ready to hire? Let an Employer of Record handle payroll & compliance" />
+        </div>
+      )}
+
+      {/* ───────────── Latest guides ───────────── */}
+      <section aria-labelledby="guides-heading" className="mx-auto w-full max-w-6xl px-4 pt-12 sm:px-6">
+        <div className="flex flex-wrap items-end justify-between gap-2">
+          <h2 id="guides-heading" className="text-2xl font-bold tracking-tight text-ink">
+            Hiring guides
+          </h2>
+          <Link
+            href="/blog"
+            className="inline-flex min-h-12 items-center text-sm font-semibold text-brand-700 underline-offset-4 hover:underline"
+          >
+            All guides <span aria-hidden="true">&nbsp;→</span>
+          </Link>
+        </div>
+        <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {ARTICLES.slice(0, 6).map((article) => (
+            <li key={article.slug}>
+              <Link
+                href={`/blog/${article.slug}`}
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition-shadow hover:border-brand-300 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+              >
+                <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">{article.category}</span>
+                <span className="mt-1 font-bold leading-snug text-ink group-hover:text-brand-700">{article.title}</span>
+                <span className="mt-auto pt-3 text-xs text-slate-500">
+                  {formatArticleDate(article.updated)} · {readingMinutes(article)} min read
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <ReviewsSection />
 
       {/* ───────────── Corridor directory (internal linking) ───────────── */}
       <section aria-labelledby="directory-heading" className="mx-auto w-full max-w-6xl px-4 pt-12 sm:px-6">

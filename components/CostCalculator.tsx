@@ -248,7 +248,7 @@ export function CostCalculator({ company, talent, partnerSlot }: CostCalculatorP
             <span className="min-w-0">
               <span className="block text-sm font-semibold text-ink">Include EOR platform fee</span>
               <span className="block text-xs text-slate-500">
-                Deel &amp; Remote list price {formatCurrency(EOR_MONTHLY_FEE_USD, 'USD')}/month
+                Typical EOR list price {formatCurrency(EOR_MONTHLY_FEE_USD, 'USD')}/month
               </span>
             </span>
             <input

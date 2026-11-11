@@ -5,7 +5,7 @@ import { CONTACT_EMAIL, SITE_NAME } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Contact us',
-  description: `How to contact the ${SITE_NAME} team about corrections, feedback, reviews, privacy requests or partnerships.`,
+  description: `How to contact ${SITE_NAME} about corrections, feedback, reviews, privacy requests or partnerships.`,
   alternates: { canonical: '/contact' },
 };
 

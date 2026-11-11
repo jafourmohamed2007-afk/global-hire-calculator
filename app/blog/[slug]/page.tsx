@@ -53,8 +53,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       breadcrumb={{ href: '/blog', label: 'Guides' }}
       intro={
         <p className="text-sm text-slate-500">
-          <span className="font-semibold text-brand-700">{article.category}</span> · By the {SITE_NAME} editorial
-          team · Updated <time dateTime={article.updated}>{formatArticleDate(article.updated)}</time> ·{' '}
+          <span className="font-semibold text-brand-700">{article.category}</span> · Published by {SITE_NAME} ·
+          Updated <time dateTime={article.updated}>{formatArticleDate(article.updated)}</time> ·{' '}
           {readingMinutes(article)} min read
         </p>
       }
@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               datePublished: article.published,
               dateModified: article.updated,
               mainEntityOfPage: absoluteUrl(path),
-              author: { '@type': 'Organization', name: `${SITE_NAME} editorial team`, url: absoluteUrl('/about') },
+              author: { '@type': 'Organization', name: SITE_NAME, url: absoluteUrl('/about') },
               publisher: { '@type': 'Organization', name: SITE_NAME, url: absoluteUrl('/') },
               inLanguage: 'en-US',
             },

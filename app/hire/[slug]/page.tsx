@@ -19,7 +19,7 @@ import {
 import { EOR_MONTHLY_FEE_USD, SHOW_PARTNER_OFFERS } from '@/data/partners';
 import { calculateHireCost, convertFromUSD, type CostBreakdown } from '@/lib/cost-engine';
 import { formatCurrency, formatPercent } from '@/lib/format';
-import { SITE_NAME, absoluteUrl } from '@/lib/site';
+import { SHARE_IMAGE, SITE_NAME, absoluteUrl } from '@/lib/site';
 
 interface HirePageProps {
   params: Promise<{ slug: string }>;
@@ -71,8 +71,9 @@ export async function generateMetadata({ params }: HirePageProps): Promise<Metad
       url: path,
       siteName: SITE_NAME,
       locale: 'en_US',
+      images: [SHARE_IMAGE],
     },
-    twitter: { card: 'summary_large_image', title, description },
+    twitter: { card: 'summary_large_image', title, description, images: [SHARE_IMAGE] },
   };
 }
 

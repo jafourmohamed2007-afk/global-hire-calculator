@@ -53,6 +53,13 @@ export default function HomePage() {
         inLanguage: 'en-US',
       },
       {
+        '@type': 'Organization',
+        '@id': absoluteUrl('/#organization'),
+        name: SITE_NAME,
+        url: absoluteUrl('/'),
+        logo: absoluteUrl('/brand/logo-mark-512.png'),
+      },
+      {
         '@type': 'WebApplication',
         '@id': absoluteUrl('/#app'),
         name: SITE_NAME,

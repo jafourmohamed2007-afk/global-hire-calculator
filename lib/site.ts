@@ -37,3 +37,14 @@ export const CONTACT_EMAIL = resolveContactEmail();
 
 /** Date the legal pages were last updated. */
 export const POLICIES_LAST_UPDATED = '11 November 2026';
+
+/**
+ * Social share image (app/opengraph-image.png). Pages that define their own `openGraph` or `twitter`
+ * metadata must list it again, because Next.js replaces those objects instead of merging them.
+ */
+export const SHARE_IMAGE = {
+  url: '/opengraph-image.png',
+  width: 1200,
+  height: 630,
+  alt: 'GlobalHire Calc — What does a remote developer really cost?',
+} as const;

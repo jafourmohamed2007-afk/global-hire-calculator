@@ -5,7 +5,7 @@ import { ArticleBody } from '@/components/ArticleBody';
 import { JsonLd } from '@/components/JsonLd';
 import { PageShell } from '@/components/PageShell';
 import { ARTICLES, formatArticleDate, getArticle, readingMinutes } from '@/data/articles';
-import { SITE_NAME, absoluteUrl } from '@/lib/site';
+import { SHARE_IMAGE, SITE_NAME, absoluteUrl } from '@/lib/site';
 
 interface ArticlePageProps {
   params: Promise<{ slug: string }>;
@@ -34,8 +34,14 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
       siteName: SITE_NAME,
       publishedTime: article.published,
       modifiedTime: article.updated,
+      images: [SHARE_IMAGE],
     },
-    twitter: { card: 'summary_large_image', title: article.title, description: article.description },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+      images: [SHARE_IMAGE],
+    },
   };
 }
 
@@ -71,7 +77,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               dateModified: article.updated,
               mainEntityOfPage: absoluteUrl(path),
               author: { '@type': 'Organization', name: SITE_NAME, url: absoluteUrl('/about') },
-              publisher: { '@type': 'Organization', name: SITE_NAME, url: absoluteUrl('/') },
+              publisher: {
+                '@type': 'Organization',
+                name: SITE_NAME,
+                url: absoluteUrl('/'),
+                logo: { '@type': 'ImageObject', url: absoluteUrl('/brand/logo-mark-512.png'), width: 512, height: 512 },
+              },
               inLanguage: 'en-US',
             },
             {

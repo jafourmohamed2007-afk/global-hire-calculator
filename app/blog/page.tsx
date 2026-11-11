@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/JsonLd';
 import { PageShell } from '@/components/PageShell';
 import { ARTICLES, formatArticleDate, readingMinutes } from '@/data/articles';
 import { DATA_YEAR } from '@/data/country-matrix';
-import { SITE_NAME, absoluteUrl } from '@/lib/site';
+import { SHARE_IMAGE, SITE_NAME, absoluteUrl } from '@/lib/site';
 
 const TITLE = `Global Hiring Guides (${DATA_YEAR})`;
 const DESCRIPTION =
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: '/blog' },
-  openGraph: { type: 'website', title: TITLE, description: DESCRIPTION, url: '/blog' },
+  openGraph: { type: 'website', title: TITLE, description: DESCRIPTION, url: '/blog', images: [SHARE_IMAGE] },
 };
 
 export default function BlogIndexPage() {

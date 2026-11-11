@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { CalculateButton } from '@/components/CalculateButton';
 import { CookieConsent, CookieSettingsButton } from '@/components/CookieConsent';
+import { LogoMark } from '@/components/LogoMark';
 import { DATA_YEAR } from '@/data/country-matrix';
 import { SHOW_PARTNER_OFFERS } from '@/data/partners';
 import { consentBootstrapScript } from '@/lib/consent';
@@ -122,12 +123,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
               href="/"
               className="flex min-h-12 min-w-0 items-center gap-2.5 rounded-lg font-bold tracking-tight text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
             >
-              <span
-                aria-hidden="true"
-                className="grid size-9 shrink-0 place-items-center rounded-xl bg-brand-600 text-sm font-black text-white"
-              >
-                GH
-              </span>
+              <LogoMark className="size-10 shrink-0" />
               <span className="hidden truncate text-base min-[400px]:inline sm:text-lg">
                 Global<span className="text-brand-600">Hire</span> Calc
               </span>
